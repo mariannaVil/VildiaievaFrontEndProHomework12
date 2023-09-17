@@ -6,6 +6,40 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        let numbers = [16,-37,54,-4,72,-56,47,4, -16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47];
+        let poznumb = numbers.filter(number => number > 0 );
+        let sum = poznumb.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        alert('сума позитивних елементів масиву: ' + sum +','+ ' кількість позитивних елементів: ' + poznumb.length);
+
+        let min = Math.min(...numbers);
+        let indexm = numbers.indexOf(min);
+        alert('мінімальний елемент масиву: ' + min +','+ ' його порядковий номер: '+ indexm);
+
+        let max = Math.max(...numbers);
+        let index = numbers.indexOf(max);
+        alert('максимальний елемент масиву: ' + max +','+ 'його порядковий номер: '+ index);
+
+        let negnumb = numbers.filter(number => number < 0 );
+        alert('кількість негативних елементів: ' + negnumb.length);
+
+        let nparpoznumb = numbers.filter(number => number > 0 && number % 2 != 0);
+        alert('кількість непарних позитивних елементів: ' + nparpoznumb.length);
+
+        let parpoznumb = numbers.filter(number => number > 0 && number % 2 ===0);
+        alert('кількість парних позитивних елементів: ' + parpoznumb.length);
+
+        let suma = parpoznumb.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        alert('сума парних позитивних елементів: ' + suma);
+
+        let suman = nparpoznumb.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        alert('сума непарних позитивних елементів: ' + suman);
+
+        let dob = poznumb.reduce((accumulator, currentValue) => accumulator * currentValue, 1);
+        alert('добуток позитивних елементів: ' + dob);
+
+        let result = numbers.map(element => (element === max ? element : 0));
+        alert(result);
+    </script>
 </body>
 </html>
